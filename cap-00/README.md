@@ -11,5 +11,5 @@ El texto presenta una introducción a HTML5, destacando cinco puntos clave:
 
 5. **HTML5 llegó para quedarse**: La W3C está impulsando HTML5 como el estándar futuro de la web, dejando de lado otros desarrollos como XHTML 2.
 
-        Finalmente, se menciona que el libro "HTML5: Up & Running" está disponible en varios formatos para quienes quieran profundizar en el tema.
+Finalmente, se menciona que el libro "HTML5: Up & Running" está disponible en varios formatos para quienes quieran profundizar en el tema.
         
