@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Video HTML5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #002e46;
+        }
+        video {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            border: 2px solid #000000;
+            border-radius: 8px;
+        }
+        .fallback {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video HTML5</h1>
+    <p>Este video está codificado en H.264, VP8 y Theora para máxima compatibilidad.</p>
+    <video controls>
+        <!-- Video en formato MP4 (H.264/AAC) -->
+        <source src="video-ejemplo.mp4" type="video/mp4">
+        <!-- Video en formato WebM (VP8/Vorbis) -->
+        <source src="video-ejemplo.webm" type="video/webm">
+        <!-- Video en formato Ogg (Theora/Vorbis) -->
+        <source src="video-ejemplo.ogv" type="video/ogg">
+        <!-- Mensaje de respaldo para navegadores sin soporte -->
+        Tu navegador no soporta videos HTML5. 
+        Por favor, actualiza tu navegador o utiliza el reproductor Flash a continuación.
+    </video>
+    <!-- Respaldo basado en Flash -->
+    <div class="fallback">
+        <p>Si no puedes reproducir el video, usa el reproductor Flash:</p>
+        <object type="application/x-shockwave-flash" data="flash-player.swf" width="640" height="360">
+            <param name="movie" value="flash-player.swf">
+            <param name="flashvars" value="file=video-ejemplo.mp4">
+            Tu navegador no soporta Flash. Considera actualizarlo.
+        </object>
+    </div>
+</body>
+</html>
