@@ -43,12 +43,12 @@ El texto también menciona cómo HTML surgió influenciado por sistemas previos,
 
 Finalmente, se destaca que la razón por la cual existe el elemento `<img>` en HTML se debe a que Marc Andreessen propuso y envió ese código. Aunque la implementación inicial no era perfecta y aún presenta desafíos, el código que se implementa tiende a prevalecer.
 
-### Citas relevantes:
+**Citas relevantes:**
 1. "HTML siempre ha sido una conversación entre fabricantes de navegadores, autores, expertos en estándares y otras personas que simplemente aparecieron y les gustaba hablar sobre corchetes angulares."
 2. "Ninguno de los navegadores de 1993 sigue existiendo de forma reconocible."
 3. "Los que ganan son los que envían."
 
-# EN RESUMEN
+### EN RESUMEN
 Entre 1997 y 2004, el desarrollo de HTML experimentó varios cambios clave:
 
 - **HTML 4.0 (1997)**: El W3C publicó HTML 4.0 y cerró el grupo de trabajo HTML.
