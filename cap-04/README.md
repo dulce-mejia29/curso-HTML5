@@ -10,7 +10,7 @@ El elemento `<canvas>` en HTML5 es un lienzo de mapa de bits que permite dibujar
 
 Tiene más de un elemento en la misma página.Cada lienzo se mostrará en el DOM y cada lienzo mantiene su propio estado, puedes acceder a ellos como a cualquier elemento. 
 
-`<canvas>id`
+`<canvas>`
 
 para incluir un atributo:id
 
