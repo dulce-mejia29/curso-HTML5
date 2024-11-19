@@ -30,7 +30,7 @@ El marcado básico de un elemento raíz en HTML5 se simplifica a:
 
 Esto es suficiente para definir el idioma de la página. Puedes eliminar el atributo `xmlns` y también el atributo `xml:lang`, ya que el primero es redundante en HTML5 y el segundo solo es relevante en XHTML.
 
-**ELEMENTO <CABEZA>**
+**ELEMENTO <head>**
 El siguiente elemento que aparece justo después del elemento raíz `<html>` es el elemento `<head>`, que contiene **metadatos** sobre la página web. Los metadatos son información sobre la página misma, como su codificación de caracteres, enlaces a archivos CSS, favicons y otros recursos. Aunque el elemento `<head>` en sí no ha cambiado mucho en HTML5, los elementos que contiene son cruciales.
 
 Aquí tienes un ejemplo típico de lo que podría contener el elemento `<head>` en HTML5:
