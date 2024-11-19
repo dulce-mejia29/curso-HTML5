@@ -26,7 +26,7 @@ Marc Andreessen propuso este elemento en 1993 para permitir la incrustación de 
 Aunque la idea fue debatida y refinada en discusiones con otros pioneros de la web, como Tim Berners-Lee y Dave Raggett, su versión inicial fue bastante simple: un elemento que permitiría a los navegadores cargar imágenes desde URLs. 
 
 La implementación del `<img>` evolucionó a lo largo de los años, influida por propuestas para hacer HTML más flexible y capaz de manejar otros medios, aunque algunas ideas como el uso de MIME para una mejor negociación de contenido o la etiqueta `<embed>` tardaron en consolidarse.
-  ###  HTML-5
+  ###  HTML5
 en este resumen hablamos de casi 17 años de la creacion de un elemento de HTML que se ha utlizado en practicamente todas las paginas web publicadas 
 
 El texto refleja cómo HTTP y HTML han evolucionado exitosamente desde sus inicios, manteniéndose vigentes a lo largo de las décadas. 
