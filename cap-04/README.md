@@ -64,18 +64,17 @@ Cuanto más llames y , más grande será el camino. Estos son métodos de "lápi
 
 Comencemos dibujando la cuadrícula en blanco roto.
 
+// Dibujar líneas horizontales
 for (var x = 0.5; x < 500; x += 10) {
   context.moveTo(x, 0);
   context.lineTo(x, 375);
 }
 
-**Dibujar líneas verticales**
-
+// Dibujar líneas verticales
 for (var y = 0.5; y < 375; y += 10) {
   context.moveTo(0, y);
   context.lineTo(500, y);
 }
-**Dibujar líneas horizontales**
 
 Todos esos eran métodos de "lápiz". Todavía no se ha dibujado nada en el lienzo. Necesitamos un método de "tinta" para que sea permanente.
 
