@@ -764,7 +764,7 @@ Para aquellos usuarios que necesiten saltar la navegación y acceder directament
 ### Conclusión:
 El uso del elemento `<nav>` en HTML5 no solo mejora la accesibilidad y la experiencia del usuario, sino que también proporciona beneficios semánticos y de SEO. Si bien los enlaces de omisión siguen siendo útiles por ahora, la transición hacia lectores de pantalla completamente compatibles con HTML5 reducirá la necesidad de esos enlaces en el futuro. Al adoptar estas prácticas, haces que tu sitio sea más inclusivo y accesible para todos.
 
-**PIE**
+**PIE DE PAGÍNA**
 
 El pie de página de un sitio web es una sección esencial que proporciona información adicional sobre el sitio, como derechos de autor, enlaces a políticas o formas de contacto. En HTML5, el uso del elemento `<footer>` mejora la semántica del código y facilita su comprensión tanto para los motores de búsqueda como para las tecnologías de asistencia.
 
