@@ -1,4 +1,4 @@
-**RESUMEN CAPITULO 3**
+# RESUMEN CAPITULO 3
 
 
 **doctype**
@@ -18,7 +18,7 @@ El doctype de HTML5 es simple y activa el modo estándar en todos los navegadore
 
 Este formato es más corto y fácil de usar que los antiguos, como el de XHTML.
 
-**RAIZ**
+## RAIZ
 
 En HTML, el **elemento raíz** es el contenedor más externo de la página, y se representa con la etiqueta `<html>`. Es el "padre" de todos los demás elementos y estructura la página como un árbol con nodos padres, hijos y hojas. En versiones anteriores como XHTML, el elemento raíz incluía atributos como `xmlns` para definir el espacio de nombres y `xml:lang` para indicar el idioma. Sin embargo, en **HTML5**, estos atributos ya no son necesarios.
 
