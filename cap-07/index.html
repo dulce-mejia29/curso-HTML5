@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Tablero - Almacenamiento HTML5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #gameBoard {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            grid-template-rows: repeat(5, 50px);
+            gap: 5px;
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .cell.selected {
+            background-color: rgb(161, 246, 202);
+        }
+    </style>
+</head>
+<body>
+
+<h1>Juego de Tablero - Estado Guardado</h1>
+<div id="gameBoard"></div>
+<button onclick="saveGameState()">Guardar Estado</button>
+<button onclick="loadGameState()">Cargar Estado</button>
+
+<script>
+    // Definimos las variables globales
+    let gGameInProgress = false;
+    let gPieces = [];
+    const kNumPieces = 5;
+    let gSelectedPieceIndex = -1;
+    let gMoveCount = 0;
+
+    // Creamos el tablero de juego
+    function createBoard() {
+        const gameBoard = document.getElementById("gameBoard");
+        gameBoard.innerHTML = "";  // Limpiar tablero
+
+        // Creamos las celdas del tablero
+        for (let i = 0; i < 25; i++) {
+            let cell = document.createElement("div");
+            cell.classList.add("cell");
+            cell.dataset.index = i;
+            cell.onclick = () => selectPiece(i);
+            gameBoard.appendChild(cell);
+        }
+    }
+
+    // Seleccionamos una pieza
+    function selectPiece(index) {
+        const boardCells = document.querySelectorAll(".cell");
+        boardCells.forEach(cell => cell.classList.remove("selected"));
+        
+        gSelectedPieceIndex = index;
+        boardCells[index].classList.add("selected");
+    }
+
+    // Guardamos el estado del juego usando localStorage
+    function saveGameState() {
+        if (!supportsLocalStorage()) return;
+
+        localStorage["halma.game.in.progress"] = gGameInProgress;
+        for (let i = 0; i < kNumPieces; i++) {
+            localStorage["halma.piece." + i + ".index"] = gPieces[i];
+        }
+        localStorage["halma.selectedpiece"] = gSelectedPieceIndex;
+        localStorage["halma.movecount"] = gMoveCount;
+
+        alert("Estado guardado.");
+    }
+
+    // Cargamos el estado del juego desde localStorage
+    function loadGameState() {
+        if (!supportsLocalStorage()) return;
+
+        gGameInProgress = (localStorage["halma.game.in.progress"] === "true");
+        if (!gGameInProgress) return;
+
+        for (let i = 0; i < kNumPieces; i++) {
+            gPieces[i] = parseInt(localStorage["halma.piece." + i + ".index"]);
+        }
+
+        gSelectedPieceIndex = parseInt(localStorage["halma.selectedpiece"]);
+        gMoveCount = parseInt(localStorage["halma.movecount"]);
+
+        // Restauramos el tablero
+        const boardCells = document.querySelectorAll(".cell");
+        boardCells.forEach(cell => cell.classList.remove("selected"));
+        if (gSelectedPieceIndex !== -1) {
+            boardCells[gSelectedPieceIndex].classList.add("selected");
+        }
+
+        alert("Estado cargado.");
+    }
+
+    // Verificamos si localStorage está disponible
+    function supportsLocalStorage() {
+        try {
+            localStorage.setItem("test", "test");
+            localStorage.removeItem("test");
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    // Inicializamos el juego
+    function initGame() {
+        createBoard();
+    }
+
+    // Iniciamos el juego cuando cargue la página
+    window.onload = initGame;
+</script>
+
+</body>
+</html>
