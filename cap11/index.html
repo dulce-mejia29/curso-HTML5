@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+</head>
+<body>
+    <div id="gallery">
+        <p class="photonav">
+            <a id="photonext" href="image2.html">Siguiente ></a>
+            <a id="photoprev" href="image1.html">< Anterior</a>
+        </p>
+        <figure id="photo">
+            <img id="photoimg" src="image1.jpg" alt="Imagen 1" width="500" height="375">
+            <figcaption>Imagen 1</figcaption>
+        </figure>
+    </div>
+
+    <script>
+        function swapPhoto(href) {
+            // Simula la carga de una nueva imagen (en lugar de hacer un HTTP request real, cambiamos el contenido manualmente)
+            var newImage = '';
+            if (href === "image2.html") {
+                newImage = '<img id="photoimg" src="image2.jpg" alt="Imagen 2" width="500" height="375">';
+            } else {
+                newImage = '<img id="photoimg" src="image1.jpg" alt="Imagen 1" width="500" height="375">';
+            }
+            
+            // Cambia la imagen y la descripción
+            document.getElementById("photo").innerHTML = newImage + '<figcaption>' + (href === "image2.html" ? 'Imagen 2' : 'Imagen 1') + '</figcaption>';
+        }
+
+        function setupHistoryClicks() {
+            document.getElementById("photonext").addEventListener("click", function(e) {
+                e.preventDefault();
+                swapPhoto("image2.html");
+                history.pushState({ page: "image2" }, "Imagen 2", "image2.html");
+            });
+
+            document.getElementById("photoprev").addEventListener("click", function(e) {
+                e.preventDefault();
+                swapPhoto("image1.html");
+                history.pushState({ page: "image1" }, "Imagen 1", "image1.html");
+            });
+        }
+
+        // Inicializa los enlaces
+        setupHistoryClicks();
+
+        // Maneja el botón "Atrás"
+        window.addEventListener("popstate", function(e) {
+            if (e.state && e.state.page === "image2") {
+                swapPhoto("image2.html");
+            } else {
+                swapPhoto("image1.html");
+            }
+        });
+    </script>
+</body>
+</html>
