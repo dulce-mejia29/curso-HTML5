@@ -12,7 +12,7 @@ Tiene más de un elemento en la misma página.Cada lienzo se mostrará en el DOM
 
 `<canvas>`
 
-para incluir un atributo:id
+para incluir un atributo:
 
 `<canvas id="a" width="300" height="225"></canvas>`
 
