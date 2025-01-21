@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Halma</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tablero" width="450" height="450"></canvas>
+
+<script>
+  // Constantes para el juego
+  const TAMANO_TABLERO = 9;
+  const TAMANO_PIEZA = 50;
+  const kPixelWidth = TAMANO_TABLERO * TAMANO_PIEZA;
+  const kPixelHeight = TAMANO_TABLERO * TAMANO_PIEZA;
+
+  // Inicialización del lienzo
+  const gCanvasElement = document.getElementById("tablero");
+  const gDrawingContext = gCanvasElement.getContext("2d");
+  let gNumMovimientos = 0;
+
+  // Piezas iniciales en la esquina inferior izquierda
+  let gPieces = [
+    { row: 6, column: 0 },
+    { row: 6, column: 1 },
+    { row: 6, column: 2 },
+    { row: 7, column: 0 },
+    { row: 7, column: 1 },
+    { row: 7, column: 2 },
+    { row: 8, column: 0 },
+    { row: 8, column: 1 },
+    { row: 8, column: 2 }
+  ];
+
+  // Dibujar tablero
+  function drawBoard() {
+    gDrawingContext.clearRect(0, 0, kPixelWidth, kPixelHeight);
+    gDrawingContext.beginPath();
+    for (let x = 0; x <= kPixelWidth; x += TAMANO_PIEZA) {
+      gDrawingContext.moveTo(x, 0);
+      gDrawingContext.lineTo(x, kPixelHeight);
+    }
+    for (let y = 0; y <= kPixelHeight; y += TAMANO_PIEZA) {
+      gDrawingContext.moveTo(0, y);
+      gDrawingContext.lineTo(kPixelWidth, y);
+    }
+    gDrawingContext.strokeStyle = "#ccc";
+    gDrawingContext.stroke();
+  }
+
+  // Dibujar pieza
+  function drawPiece(p, selected = false) {
+    const x = (p.column * TAMANO_PIEZA) + (TAMANO_PIEZA / 2);
+    const y = (p.row * TAMANO_PIEZA) + (TAMANO_PIEZA / 2);
+    const radius = (TAMANO_PIEZA / 2) - 5;
+
+    gDrawingContext.beginPath();
+    gDrawingContext.arc(x, y, radius, 0, Math.PI * 2, false);
+    gDrawingContext.closePath();
+    gDrawingContext.strokeStyle = "#000";
+    gDrawingContext.stroke();
+
+    if (selected) {
+      gDrawingContext.fillStyle = "#000";
+      gDrawingContext.fill();
+    }
+  }
+
+  // Dibuja todas las piezas en sus posiciones actuales
+  function drawPieces() {
+    for (const piece of gPieces) {
+      drawPiece(piece);
+    }
+  }
+
+  // Obtener coordenadas del clic en el lienzo
+  function getCursorPosition(e) {
+    let x = e.pageX - gCanvasElement.offsetLeft;
+    let y = e.pageY - gCanvasElement.offsetTop;
+    const row = Math.floor(y / TAMANO_PIEZA);
+    const column = Math.floor(x / TAMANO_PIEZA);
+    return { row, column };
+  }
+
+  // Manejador de clics en el tablero
+  function halmaOnClick(e) {
+    const cell = getCursorPosition(e);
+
+    for (let i = 0; i < gPieces.length; i++) {
+      const piece = gPieces[i];
+      if (piece.row === cell.row && piece.column === cell.column) {
+        movePiece(piece);
+        return;
+      }
+    }
+  }
+
+  // Mover una pieza seleccionada a una posición adyacente vacía
+  function movePiece(piece) {
+    const emptyCell = findEmptyAdjacentCell(piece);
+    if (emptyCell) {
+      piece.row = emptyCell.row;
+      piece.column = emptyCell.column;
+      gNumMovimientos++;
+      drawBoard();
+      drawPieces();
+      checkWin();
+    }
+  }
+
+  // Encontrar una celda vacía adyacente
+  function findEmptyAdjacentCell(piece) {
+    const directions = [
+      { row: -1, column: 0 }, // Norte
+      { row: 1, column: 0 },  // Sur
+      { row: 0, column: -1 }, // Oeste
+      { row: 0, column: 1 },  // Este
+      { row: -1, column: -1 }, // Noroeste
+      { row: -1, column: 1 },  // Noreste
+      { row: 1, column: -1 },  // Suroeste
+      { row: 1, column: 1 }   // Sureste
+    ];
+
+    for (const dir of directions) {
+      const newRow = piece.row + dir.row;
+      const newCol = piece.column + dir.column;
+      if (isCellEmpty(newRow, newCol)) {
+        return { row: newRow, column: newCol };
+      }
+    }
+    return null;
+  }
+
+  // Verificar si una celda está vacía
+  function isCellEmpty(row, column) {
+    if (row < 0 || row >= TAMANO_TABLERO || column < 0 || column >= TAMANO_TABLERO) {
+      return false;
+    }
+    return !gPieces.some(p => p.row === row && p.column === column);
+  }
+
+  // Comprobar si se ha ganado el juego
+  function checkWin() {
+    const goal = [
+      { row: 0, column: 6 }, { row: 0, column: 7 }, { row: 0, column: 8 },
+      { row: 1, column: 6 }, { row: 1, column: 7 }, { row: 1, column: 8 },
+      { row: 2, column: 6 }, { row: 2, column: 7 }, { row: 2, column: 8 }
+    ];
+    const won = goal.every((goalCell, i) =>
+      gPieces[i].row === goalCell.row && gPieces[i].column === goalCell.column);
+    if (won) {
+      alert(`¡Ganaste en ${gNumMovimientos} movimientos!`);
+    }
+  }
+
+  // Inicialización del juego
+  function init() {
+    drawBoard();
+    drawPieces();
+    gCanvasElement.addEventListener("click", halmaOnClick, false);
+  }
+
+  window.onload = init;
+</script>
+
+</body>
+</html>
