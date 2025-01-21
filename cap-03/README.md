@@ -18,7 +18,7 @@ El doctype de HTML5 es simple y activa el modo estándar en todos los navegadore
 
 Este formato es más corto y fácil de usar que los antiguos, como el de XHTML.
 
-## RAIZ
+**RAIZ**
 
 En HTML, el **elemento raíz** es el contenedor más externo de la página, y se representa con la etiqueta `<html>`. Es el "padre" de todos los demás elementos y estructura la página como un árbol con nodos padres, hijos y hojas. En versiones anteriores como XHTML, el elemento raíz incluía atributos como `xmlns` para definir el espacio de nombres y `xml:lang` para indicar el idioma. Sin embargo, en **HTML5**, estos atributos ya no son necesarios.
 
@@ -46,7 +46,7 @@ Aquí tienes un ejemplo típico de lo que podría contener el elemento `<head>` 
 </head>
 ```
 
-### Desglose de los elementos dentro de `<head>`:
+**Desglose de los elementos dentro de `<head>`:**
 
 1. **`<meta charset="utf-8">`**: 
    - Este elemento define la codificación de caracteres de la página, que en este caso es UTF-8. En HTML5, esta es la forma simplificada de declarar la codificación de la página, reemplazando la forma más antigua y verbosa:
@@ -89,13 +89,13 @@ En resumen, el **elemento `<head>`** actúa como el contenedor de estos metadato
 **CODIFICACION DE CARACTERES**
 La **codificación de caracteres** es fundamental para que las computadoras representen texto en una forma que los humanos puedan entender. Mientras que para los humanos el "texto" es una colección de letras y símbolos que vemos en la pantalla, para las computadoras, el texto es una secuencia de bits y bytes que necesitan ser interpretados de acuerdo con una codificación específica.
 
-### ¿Qué es la codificación de caracteres?
+**¿Qué es la codificación de caracteres?**
 
 La **codificación de caracteres** proporciona una correspondencia entre los caracteres visibles (como letras, números y símbolos) y las secuencias de bytes que las computadoras almacenan y procesan. Existen diferentes codificaciones de caracteres optimizadas para varios idiomas o conjuntos de caracteres. Ejemplos incluyen codificaciones específicas para el ruso, el chino o el inglés, así como codificaciones más universales como **UTF-8** que pueden manejar varios idiomas y símbolos.
 
 Cada codificación puede representar los mismos caracteres, pero puede usar diferentes secuencias de bytes para hacerlo. En este sentido, la codificación es como una "clave de descifrado" para convertir bytes en texto visible.
 
-### Cómo determinan los navegadores la codificación
+**Cómo determinan los navegadores la codificación**
 
 Los navegadores web necesitan saber en qué codificación está escrita una página web para poder mostrarla correctamente. Esto puede hacerse de varias formas:
 
@@ -120,18 +120,18 @@ Los navegadores web necesitan saber en qué codificación está escrita una pág
      ```
    - Este formato abreviado es más fácil de usar y funciona en todos los navegadores modernos. El propósito sigue siendo el mismo: decirle al navegador que el documento usa la codificación **UTF-8**.
 
-### ¿Por qué es importante especificar la codificación?
+**¿Por qué es importante especificar la codificación?**
 
 Especificar la codificación de caracteres en cada página web es esencial por varias razones:
 - **Compatibilidad global**: Permite que el documento se vea correctamente en diferentes navegadores y sistemas operativos.
 - **Seguridad**: La falta de una declaración de codificación puede abrir la puerta a ciertos tipos de vulnerabilidades de seguridad.
 - **Estabilidad**: Sin una declaración adecuada, los caracteres pueden interpretarse incorrectamente, lo que resulta en texto ilegible o corrupto.
 
-### ¿Siempre es necesario declarar la codificación?
+**¿Siempre es necesario declarar la codificación?**
 
 **Sí**, siempre se debe declarar la codificación, incluso si no se están usando "caracteres especiales". No hacerlo puede generar problemas en la representación del texto o abrir la posibilidad de ataques de seguridad.
 
-### EN CONCLUSION:
+**EN CONCLUSION:**
 La **codificación de caracteres** es compleja y es esencial para que las páginas web funcionen correctamente. Siempre debes especificar una codificación, ya sea a través de un encabezado HTTP o con una declaración `<meta>`. La forma más simple y moderna de hacerlo es usando el formato de HTML5:
 
 ```html
@@ -144,7 +144,7 @@ Esto garantizará que tu página web sea interpretada correctamente por los nave
 
 En HTML, los enlaces no solo apuntan a otras páginas web, sino que también pueden describir **relaciones** que ofrecen información adicional sobre el propósito del enlace. Esto se expresa a través del atributo `rel`. Las relaciones de enlaces ayudan a completar la frase: *"Estoy apuntando a esta página porque..."*. Estas relaciones permiten que los navegadores y motores de búsqueda interpreten mejor el significado o el propósito de un enlace, facilitando una navegación y funcionalidad más clara.
 
-### Tipos de enlaces y relaciones
+**Tipos de enlaces y relaciones**
 
 HTML5 divide las relaciones de enlaces en dos categorías principales:
 
@@ -152,7 +152,7 @@ HTML5 divide las relaciones de enlaces en dos categorías principales:
    
 2. **Hipervínculos a otros documentos**: Son los enlaces tradicionales que apuntan a otras páginas web o documentos. No son esenciales para el funcionamiento de la página actual.
 
-#### Ejemplos comunes de relaciones de enlace:
+**Ejemplos comunes de relaciones de enlace:**
 
 - **rel="stylesheet"**: 
    - Se utiliza para enlazar a una hoja de estilo CSS externa que contiene reglas de estilo que el navegador aplicará al documento.
@@ -196,11 +196,11 @@ HTML5 divide las relaciones de enlaces en dos categorías principales:
    <link rel="search" href="/opensearch.xml" />
    ```
 
-### Uso de `rel` en HTML
+**Uso de `rel` en HTML**
 
 Los atributos `rel` se utilizan tanto en elementos `<link>` como en hipervínculos (`<a>`), aunque las relaciones de enlaces son más comunes en los elementos `<link>` dentro del `<head>` del documento, que se utilizan para conectar recursos externos.
 
-#### Enlaces de hipervínculo con relaciones:
+**Enlaces de hipervínculo con relaciones:**
 
 Un enlace regular (`<a href="...">`) también puede incluir relaciones de enlace en su atributo `rel`:
 
@@ -214,11 +214,11 @@ Un enlace regular (`<a href="...">`) también puede incluir relaciones de enlace
    <a href="/tags/technology" rel="tag">Technology</a>
    ```
 
-### Creación de relaciones personalizadas
+**Creación de relaciones personalizadas**
 
 El atributo `rel` está estandarizado para evitar que los desarrolladores inventen valores sin sentido. Sin embargo, el proceso para proponer nuevas relaciones está gestionado por el **WHATWG**, que mantiene un registro de valores propuestos.
 
-### En conclusion 
+**En conclusion** 
 
 El uso de relaciones en los enlaces (`rel`) en HTML es una manera de proporcionar un contexto adicional sobre por qué se está enlazando a un recurso o documento específico. Las relaciones comunes como `rel="stylesheet"`, `rel="alternate"`, `rel="icon"`, y `rel="nofollow"` ofrecen funcionalidades útiles que mejoran la navegación, SEO, y la experiencia del usuario, mientras que otros valores más avanzados permiten mejorar la gestión de recursos y la organización de sitios web complejos.
 
@@ -228,7 +228,7 @@ HTML5 introdujo varios elementos semánticos diseñados para estructurar el cont
 
 A continuación, se describen algunos de los nuevos elementos semánticos más importantes en HTML5:
 
-#### `<section>`
+**`<section>`**
 El elemento `<section>` representa una sección genérica de un documento o aplicación, generalmente agrupada temáticamente y acompañada de un encabezado. Es ideal para dividir contenido en partes significativas, como capítulos de un libro o secciones numeradas de una tesis. 
 
 **Ejemplo de uso:**
@@ -239,7 +239,7 @@ El elemento `<section>` representa una sección genérica de un documento o apli
 </section>
 ```
 
-#### `<nav>`
+**`<nav>`**
 El elemento `<nav>` se utiliza para representar una sección de navegación que contiene enlaces a otras páginas o a secciones dentro de la misma página. No todos los conjuntos de enlaces deben estar dentro de un `<nav>`, solo aquellos que son bloques principales de navegación.
 
 **Ejemplo de uso:**
@@ -253,7 +253,7 @@ El elemento `<nav>` se utiliza para representar una sección de navegación que 
 </nav>
 ```
 
-#### `<article>`
+**`<article>`**
 El elemento `<article>` se usa para representar un bloque de contenido autónomo y reutilizable, como una publicación de blog, un artículo de una revista, un comentario de un foro o cualquier otro contenido que pueda existir de manera independiente.
 
 **Ejemplo de uso:**
@@ -264,7 +264,7 @@ El elemento `<article>` se usa para representar un bloque de contenido autónomo
 </article>
 ```
 
-#### `<aside>`
+**`<aside>`**
 El elemento `<aside>` representa contenido tangencial al principal, como una barra lateral o información adicional. A menudo se usa para mostrar contenido relacionado que puede considerarse independiente del flujo principal, como anuncios, citas o listas de recursos.
 
 **Ejemplo de uso:**
@@ -275,7 +275,7 @@ El elemento `<aside>` representa contenido tangencial al principal, como una bar
 </aside>
 ```
 
-#### `<hgroup>`
+**`<hgroup>`**
 El elemento `<hgroup>` agrupa múltiples niveles de encabezados cuando hay más de uno en una sección, como cuando hay un título y un subtítulo juntos. Sin embargo, este elemento ha sido poco utilizado y en gran parte es considerado innecesario.
 
 **Ejemplo de uso:**
@@ -286,7 +286,7 @@ El elemento `<hgroup>` agrupa múltiples niveles de encabezados cuando hay más 
 </hgroup>
 ```
 
-#### `<header>`
+**`<header>`**
 El elemento `<header>` representa el encabezado de una sección o página. Puede contener títulos, logotipos, tablas de contenido, formularios de búsqueda, o cualquier elemento introductorio relacionado con la navegación o estructura de la página.
 
 **Ejemplo de uso:**
@@ -300,7 +300,7 @@ El elemento `<header>` representa el encabezado de una sección o página. Puede
 </header>
 ```
 
-#### `<footer>`
+**`<footer>`**
 El elemento `<footer>` se usa para marcar el pie de una sección o documento. A menudo contiene información de derechos de autor, enlaces relacionados, y datos de contacto, aunque puede aparecer en cualquier lugar dentro del contenido.
 
 **Ejemplo de uso:**
@@ -310,7 +310,7 @@ El elemento `<footer>` se usa para marcar el pie de una sección o documento. A 
 </footer>
 ```
 
-#### `<time>`
+**`<time>`**
 El elemento `<time>` representa una fecha o una hora. Permite marcar fechas o tiempos específicos de manera estructurada, incluyendo la zona horaria si es necesario.
 
 **Ejemplo de uso:**
@@ -318,7 +318,7 @@ El elemento `<time>` representa una fecha o una hora. Permite marcar fechas o ti
 <time datetime="2024-10-21">21 de octubre de 2024</time>
 ```
 
-#### `<mark>`
+**`<mark>`**
 El elemento `<mark>` se utiliza para resaltar partes del texto con algún propósito de referencia o relevancia en un contexto determinado. Se usa para resaltar información importante en un documento.
 
 **Ejemplo de uso:**
@@ -326,13 +326,13 @@ El elemento `<mark>` se utiliza para resaltar partes del texto con algún propó
 <p>El evento <mark>JavaScript Conference 2024</mark> tendrá lugar el próximo mes.</p>
 ```
 
-### Beneficios de los elementos semánticos
+**Beneficios de los elementos semánticos**
 
 1. **Mejora la accesibilidad**: Los lectores de pantalla y otros dispositivos de asistencia entienden mejor el contenido cuando está estructurado semánticamente.
 2. **Mejor SEO**: Los motores de búsqueda pueden interpretar el contenido de manera más precisa, lo que mejora el posicionamiento en los resultados de búsqueda.
 3. **Código más limpio y mantenible**: Los desarrolladores pueden organizar y estructurar el código de manera más lógica y coherente.
 
-### Conclusión
+**Conclusión**
 El uso de los nuevos elementos semánticos de HTML5 facilita la creación de documentos bien estructurados, accesibles y optimizados para motores de búsqueda, proporcionando una experiencia de usuario más clara y coherente.
 
 **COMO LOS NAVEGADORES MANEJAN ELEMENTOS DESCONOCIDOS**
@@ -341,7 +341,7 @@ HTML5 introdujo varios elementos semánticos diseñados para estructurar el cont
 
 A continuación, se describen algunos de los nuevos elementos semánticos más importantes en HTML5:
 
-#### `<section>`
+**`<section>`**
 El elemento `<section>` representa una sección genérica de un documento o aplicación, generalmente agrupada temáticamente y acompañada de un encabezado. Es ideal para dividir contenido en partes significativas, como capítulos de un libro o secciones numeradas de una tesis. 
 
 **Ejemplo de uso:**
@@ -352,7 +352,7 @@ El elemento `<section>` representa una sección genérica de un documento o apli
 </section>
 ```
 
-#### `<nav>`
+**`<nav>`**
 El elemento `<nav>` se utiliza para representar una sección de navegación que contiene enlaces a otras páginas o a secciones dentro de la misma página. No todos los conjuntos de enlaces deben estar dentro de un `<nav>`, solo aquellos que son bloques principales de navegación.
 
 **Ejemplo de uso:**
@@ -366,7 +366,7 @@ El elemento `<nav>` se utiliza para representar una sección de navegación que 
 </nav>
 ```
 
-#### `<article>`
+**`<article>`**
 El elemento `<article>` se usa para representar un bloque de contenido autónomo y reutilizable, como una publicación de blog, un artículo de una revista, un comentario de un foro o cualquier otro contenido que pueda existir de manera independiente.
 
 **Ejemplo de uso:**
@@ -376,8 +376,7 @@ El elemento `<article>` se usa para representar un bloque de contenido autónomo
   <p>Este es el contenido de un artículo.</p>
 </article>
 ```
-
-#### `<aside>`
+**`<aside>`**
 El elemento `<aside>` representa contenido tangencial al principal, como una barra lateral o información adicional. A menudo se usa para mostrar contenido relacionado que puede considerarse independiente del flujo principal, como anuncios, citas o listas de recursos.
 
 **Ejemplo de uso:**
@@ -388,7 +387,7 @@ El elemento `<aside>` representa contenido tangencial al principal, como una bar
 </aside>
 ```
 
-#### `<hgroup>`
+**`<hgroup>`**
 El elemento `<hgroup>` agrupa múltiples niveles de encabezados cuando hay más de uno en una sección, como cuando hay un título y un subtítulo juntos. Sin embargo, este elemento ha sido poco utilizado y en gran parte es considerado innecesario.
 
 **Ejemplo de uso:**
@@ -399,7 +398,7 @@ El elemento `<hgroup>` agrupa múltiples niveles de encabezados cuando hay más 
 </hgroup>
 ```
 
-#### `<header>`
+**`<header>`**
 El elemento `<header>` representa el encabezado de una sección o página. Puede contener títulos, logotipos, tablas de contenido, formularios de búsqueda, o cualquier elemento introductorio relacionado con la navegación o estructura de la página.
 
 **Ejemplo de uso:**
@@ -413,7 +412,7 @@ El elemento `<header>` representa el encabezado de una sección o página. Puede
 </header>
 ```
 
-#### `<footer>`
+**`<footer>`**
 El elemento `<footer>` se usa para marcar el pie de una sección o documento. A menudo contiene información de derechos de autor, enlaces relacionados, y datos de contacto, aunque puede aparecer en cualquier lugar dentro del contenido.
 
 **Ejemplo de uso:**
@@ -423,7 +422,7 @@ El elemento `<footer>` se usa para marcar el pie de una sección o documento. A 
 </footer>
 ```
 
-#### `<time>`
+**`<time>`**
 El elemento `<time>` representa una fecha o una hora. Permite marcar fechas o tiempos específicos de manera estructurada, incluyendo la zona horaria si es necesario.
 
 **Ejemplo de uso:**
@@ -431,7 +430,7 @@ El elemento `<time>` representa una fecha o una hora. Permite marcar fechas o ti
 <time datetime="2024-10-21">21 de octubre de 2024</time>
 ```
 
-#### `<mark>`
+**`<mark>`**
 El elemento `<mark>` se utiliza para resaltar partes del texto con algún propósito de referencia o relevancia en un contexto determinado. Se usa para resaltar información importante en un documento.
 
 **Ejemplo de uso:**
@@ -439,13 +438,13 @@ El elemento `<mark>` se utiliza para resaltar partes del texto con algún propó
 <p>El evento <mark>JavaScript Conference 2024</mark> tendrá lugar el próximo mes.</p>
 ```
 
-### Beneficios de los elementos semánticos
+**Beneficios de los elementos semánticos**
 
 1. **Mejora la accesibilidad**: Los lectores de pantalla y otros dispositivos de asistencia entienden mejor el contenido cuando está estructurado semánticamente.
 2. **Mejor SEO**: Los motores de búsqueda pueden interpretar el contenido de manera más precisa, lo que mejora el posicionamiento en los resultados de búsqueda.
 3. **Código más limpio y mantenible**: Los desarrolladores pueden organizar y estructurar el código de manera más lógica y coherente.
 
-### Conclusión
+**Conclusión**
 El uso de los nuevos elementos semánticos de HTML5 facilita la creación de documentos bien estructurados, accesibles y optimizados para motores de búsqueda, proporcionando una experiencia de usuario más clara y coherente.
 
 **ENCABEZADOS**
@@ -471,7 +470,7 @@ En el marcado original:
 
 Este código es válido en HTML5, pero tiene algunas áreas que podrían beneficiarse de los nuevos elementos semánticos. En lugar de utilizar un `div` genérico con el `id="header"`, puedes reemplazarlo con un elemento `<header>`. Además, el eslogan que acompaña al título principal puede ser marcado con un `<hgroup>`, que permite agrupar encabezados relacionados sin crear nodos adicionales innecesarios en el esquema del documento.
 
-### Optimización con HTML5
+**Optimización con HTML5**
 
 Aquí está el marcado actualizado con los nuevos elementos semánticos de HTML5:
 
@@ -492,13 +491,13 @@ Aquí está el marcado actualizado con los nuevos elementos semánticos de HTML5
 </div>
 ```
 
-### Ventajas de usar `<header>` y `<hgroup>`
+**Ventajas de usar `<header>` y `<hgroup>`**
 
 1. **Claridad semántica**: El elemento `<header>` indica claramente que el contenido contiene información introductoria o de encabezado. Los navegadores y motores de búsqueda entienden mejor la estructura del documento.
 2. **Evitar nodos fantasmas**: Con el uso de `<hgroup>`, el eslogan ahora está asociado con el título principal (`<h1>`) sin crear nodos adicionales que puedan interferir con la estructura del documento.
 3. **Mejor accesibilidad**: Los lectores de pantalla y otras tecnologías de asistencia pueden interpretar más claramente el propósito del encabezado y navegar por el documento con mayor facilidad.
 
-### Esquema del documento resultante
+**Esquema del documento resultante**
 
 Con esta estructura, el esquema del documento ahora sería:
 
@@ -516,7 +515,7 @@ Esto asegura que el título del blog es el nodo raíz y que los encabezados de l
 
 En HTML5, el elemento `<article>` se introdujo para representar contenido independiente y autónomo, como artículos de blogs, publicaciones, o cualquier otro fragmento de contenido que se pueda sindicar o reutilizar. Veamos cómo se aplican estos conceptos en tu ejemplo y qué beneficios aportan.
 
-### Código original:
+**Código original:**
 
 ```html
 <div class="entry">
@@ -534,7 +533,7 @@ En HTML5, el elemento `<article>` se introdujo para representar contenido indepe
 
 Este marcado es correcto, pero HTML5 nos ofrece una forma más semántica y clara de estructurarlo utilizando el elemento `<article>` y otros elementos semánticos.
 
-### Código optimizado con HTML5:
+**Código optimizado con HTML5:**
 
 ```html
 <article>
@@ -552,7 +551,7 @@ Este marcado es correcto, pero HTML5 nos ofrece una forma más semántica y clar
 </article>
 ```
 
-### Desglose de la optimización:
+**Desglose de la optimización:**
 
 1. **Uso de `<article>`**: 
    - El contenido que antes estaba dentro de un `<div class="entry">` ahora se coloca dentro de un `<article>`. Esto indica claramente que el contenido es un artículo autónomo que puede ser independiente o sindicado.
@@ -566,7 +565,7 @@ Este marcado es correcto, pero HTML5 nos ofrece una forma más semántica y clar
    - El título del artículo ahora es un `<h1>`, ya que dentro de un `<article>`, el uso de `<h1>` no rompe la jerarquía de encabezados en el documento. Cada artículo es una sección independiente, y puede tener su propio `<h1>`.
    - En HTML4, solo se permitía un `<h1>` por página para estructurar el documento, pero en HTML5 cada nueva sección (como `<article>`) puede tener su propio `<h1>` sin afectar la estructura global.
 
-### Beneficios del uso de `<article>` y `<header>`:
+**Beneficios del uso de `<article>` y `<header>`:**
 
 1. **Estructura más clara y semántica**:
    - Ahora, los navegadores, motores de búsqueda y lectores de pantalla entienden que cada `<article>` es una unidad independiente de contenido, lo que mejora la accesibilidad y el SEO.
@@ -577,7 +576,7 @@ Este marcado es correcto, pero HTML5 nos ofrece una forma más semántica y clar
 3. **Escalabilidad**:
    - Puedes agregar múltiples artículos a la misma página sin preocuparte por ajustar los niveles de encabezado (como hacer que un título sea `<h2>` en lugar de `<h1>`). El esquema del documento seguirá siendo claro porque cada `<article>` crea su propio nodo en el esquema.
 
-### Esquema del documento resultante:
+**Esquema del documento resultante:**
 
 ```
 Travel day (h1 in article)
@@ -587,7 +586,7 @@ Travel day (h1 in article)
 
 Al tener el contenido estructurado así, la página tiene un esquema más claro, con cada artículo representado como un nodo independiente en el esquema del documento.
 
-### Consideraciones finales:
+**Consideraciones finales:**
 - En HTML5, la creación de secciones autónomas con `<article>` y `<header>` hace que sea más fácil manejar y escalar páginas con múltiples secciones o artículos, sin necesidad de cambiar manualmente el nivel de los encabezados.
 - Si usas ambos sistemas (HTML4 y HTML5) en la misma página, como encabezados `<h1>` a `<h6>` mezclados con los nuevos elementos de sección, asegúrate de revisar el esquema generado para evitar inconsistencias.
 
@@ -595,7 +594,7 @@ Al tener el contenido estructurado así, la página tiene un esquema más claro,
 
 El elemento `<time>` en HTML5 es una herramienta poderosa para representar fechas y horas de manera semántica, lo que facilita a los navegadores, motores de búsqueda y otras herramientas comprender la información temporal de tu contenido. Vamos a revisar cómo usarlo de manera óptima, basándonos en el ejemplo de tu página.
 
-### Código original:
+**Código original:**
 
 ```html
 <div class="entry">
@@ -606,7 +605,7 @@ El elemento `<time>` en HTML5 es una herramienta poderosa para representar fecha
 
 Aunque este marcado es válido en HTML5, carece de semántica que permita a las máquinas entender que estamos tratando con una fecha. Con HTML5, el uso del elemento `<time>` agrega semántica adicional al contenido temporal.
 
-### Código optimizado con HTML5 usando `<time>`:
+**Código optimizado con HTML5 usando `<time>`:**
 
 ```html
 <article>
@@ -624,7 +623,7 @@ Aunque este marcado es válido en HTML5, carece de semántica que permita a las 
 </article>
 ```
 
-### Explicación de las mejoras:
+**Explicación de las mejoras:**
 
 1. **Uso del elemento `<time>`**:
    - El elemento `<time>` permite asociar una fecha o una hora con un contenido. Aquí lo utilizamos para representar la fecha de publicación del artículo.
@@ -639,7 +638,7 @@ Aunque este marcado es válido en HTML5, carece de semántica que permita a las 
 3. **Mantener el contenido textual legible por humanos**:
    - Aunque el atributo `datetime` utiliza un formato legible por máquinas, el texto entre las etiquetas `<time></time>` sigue siendo completamente personalizable para mostrar una versión más comprensible para los usuarios humanos, como "October 22, 2009" o incluso algo más descriptivo como "last Thursday".
 
-### Ejemplos adicionales:
+**Ejemplos adicionales:**
 
 1. **Incluir solo la fecha**:
 
@@ -669,7 +668,7 @@ Aunque este marcado es válido en HTML5, carece de semántica que permita a las 
 
    Aquí, aunque el texto dice "last Thursday", el valor dentro del atributo `datetime` sigue siendo exacto y legible por máquinas.
 
-### Beneficios:
+**Beneficios:**
 
 1. **Mejora del SEO y accesibilidad**:
    - Los motores de búsqueda como Google reconocen el elemento `<time>` y utilizan la información temporal para indexar mejor tu contenido.
@@ -688,7 +687,7 @@ Si bien el uso del `<time>` es opcional, su implementación en el marcado es una
 
   En HTML5, la semántica y la accesibilidad son elementos clave, especialmente en la navegación del sitio web. La introducción del elemento `<nav>` mejora la claridad y la accesibilidad del código, lo que permite que tanto las máquinas como las personas con discapacidades identifiquen fácilmente las áreas de navegación.
 
-### Código original:
+**Código original:**
 
 ```html
 <div id="nav">
@@ -703,7 +702,7 @@ Si bien el uso del `<time>` es opcional, su implementación en el marcado es una
 
 Este código es HTML5 válido, pero carece de semántica específica que indique que se trata de una sección de navegación. Aunque visualmente es claro, no proporciona la información semántica necesaria para usuarios con discapacidades o para herramientas de accesibilidad como lectores de pantalla.
 
-### Mejora con `<nav>`:
+**Mejora con `<nav>`:**
 
 ```html
 <nav>
@@ -716,7 +715,7 @@ Este código es HTML5 válido, pero carece de semántica específica que indique
 </nav>
 ```
 
-### Explicación de las mejoras:
+**Explicación de las mejoras:**
 
 1. **El uso del elemento `<nav>`**:
    - El elemento `<nav>` está específicamente diseñado para agrupar secciones de navegación en una página web. Al envolver la lista de enlaces dentro de `<nav>`, le estamos diciendo a los navegadores, motores de búsqueda y tecnologías asistivas que este bloque contiene los enlaces principales de navegación.
@@ -731,7 +730,7 @@ Este código es HTML5 válido, pero carece de semántica específica que indique
    - En HTML5, con la introducción del elemento `<nav>`, los enlaces de omisión eventualmente podrían volverse obsoletos, ya que los lectores de pantalla modernos podrían detectar automáticamente las secciones de navegación y ofrecer opciones para saltar de manera nativa.
    - Sin embargo, no todos los usuarios tienen acceso inmediato a las versiones más recientes de los lectores de pantalla, por lo que es recomendable seguir ofreciendo enlaces de omisión como respaldo durante la transición.
 
-### Ejemplo de un enlace de omisión adicional:
+**Ejemplo de un enlace de omisión adicional:**
 
 Para aquellos usuarios que necesiten saltar la navegación y acceder directamente al contenido principal, puedes agregar un enlace de omisión:
 
@@ -754,21 +753,21 @@ Para aquellos usuarios que necesiten saltar la navegación y acceder directament
 ```
 
 - Este enlace permite a los usuarios de teclados o lectores de pantalla saltar directamente al contenido principal de la página.
-
-### Beneficios del uso de `<nav>`:
+-
+- **Beneficios del uso de `<nav>`:**
 
 1. **Claridad Semántica**: Mejora la semántica del código HTML, facilitando que las máquinas entiendan la estructura y propósito del contenido.
 2. **Mejora de la Accesibilidad**: Los lectores de pantalla pueden identificar claramente las secciones de navegación y ofrecer a los usuarios opciones para navegar de manera más eficiente.
 3. **SEO (Optimización para Motores de Búsqueda)**: Los motores de búsqueda como Google pueden interpretar más fácilmente las secciones de navegación, lo que potencialmente mejora la clasificación y la indexación de tu sitio.
 
-### Conclusión:
+**Conclusión:**
 El uso del elemento `<nav>` en HTML5 no solo mejora la accesibilidad y la experiencia del usuario, sino que también proporciona beneficios semánticos y de SEO. Si bien los enlaces de omisión siguen siendo útiles por ahora, la transición hacia lectores de pantalla completamente compatibles con HTML5 reducirá la necesidad de esos enlaces en el futuro. Al adoptar estas prácticas, haces que tu sitio sea más inclusivo y accesible para todos.
 
 **PIE DE PAGÍNA**
 
 El pie de página de un sitio web es una sección esencial que proporciona información adicional sobre el sitio, como derechos de autor, enlaces a políticas o formas de contacto. En HTML5, el uso del elemento `<footer>` mejora la semántica del código y facilita su comprensión tanto para los motores de búsqueda como para las tecnologías de asistencia.
 
-### Código original:
+**Código original:**
 
 ```html
 <div id="footer">
@@ -779,7 +778,7 @@ El pie de página de un sitio web es una sección esencial que proporciona infor
 
 Este código es HTML5 válido, pero para una mejor semántica, puede ser reemplazado por el elemento `<footer>`:
 
-### Mejora con `<footer>`:
+**Mejora con `<footer>`:**
 
 ```html
 <footer>
@@ -788,7 +787,7 @@ Este código es HTML5 válido, pero para una mejor semántica, puede ser reempla
 </footer>
 ```
 
-### Explicación:
+**Explicación:**
 
 1. **Uso de `<footer>`**: 
    - El elemento `<footer>` está diseñado específicamente para contener la información de pie de página de una página web o una sección de contenido. Es adecuado para contener datos como derechos de autor, enlaces de contacto, términos de servicio, entre otros. Al usar `<footer>`, se mejora la semántica del documento y se clarifica su estructura para las tecnologías de asistencia.
@@ -803,7 +802,7 @@ Este código es HTML5 válido, pero para una mejor semántica, puede ser reempla
 4. **Pies de página complejos ("Fat footers")**:
    - Sitios como **W3C** utilizan lo que se llama un "pie de página gordo", con varias columnas y una gran cantidad de información. Estos pies de página pueden contener múltiples secciones como navegación, contacto y actualizaciones.
 
-### Ejemplo de un "pie de página gordo" semántico en HTML5:
+**Ejemplo de un "pie de página gordo" semántico en HTML5:**
 
 Aquí tienes un ejemplo de cómo convertir un pie de página complejo en un marcado HTML5 semántico, utilizando `<footer>`, `<nav>`, y `<section>`:
 
@@ -839,13 +838,13 @@ Aquí tienes un ejemplo de cómo convertir un pie de página complejo en un marc
 </footer>
 ```
 
-### Explicación del marcado:
+**Explicación del marcado:**
 
 1. **`<footer>`**: El pie de página envuelve todo el contenido final de la página, lo que indica que esta sección contiene información de cierre.
 2. **`<nav>`**: Se usa para las secciones que contienen navegación dentro del pie de página, como enlaces a otras partes del sitio o recursos adicionales.
 3. **`<section>`**: Utilizado aquí para representar un bloque de contenido independiente (actualizaciones de W3C en este caso), que puede tener contenido agrupado por un tema específico.
 4. **Encabezados (`<h1>`)**: Se utilizan dentro de `<nav>` y `<section>` para estructurar mejor la jerarquía de los contenidos, especialmente cuando hay varias secciones dentro del pie de página.
 
-### Conclusión:
+**Conclusión:**
 
 El uso de `<footer>` en HTML5 mejora significativamente la semántica y la accesibilidad del pie de página, haciéndolo más claro tanto para los usuarios como para las tecnologías asistivas. Implementar un pie de página bien estructurado en HTML5 no solo mejora la experiencia del usuario, sino que también optimiza el código para los motores de búsqueda y otras herramientas.
