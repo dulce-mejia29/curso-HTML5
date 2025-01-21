@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo de HTML con Formulario y Tabla</title>
+</head>
+<body>
+    <header>
+        <h1>Contacto y Lista de Productos</h1>
+        <p>Bienvenido a nuestra página de ejemplo con un formulario de contacto y una tabla de productos.</p>
+    </header>
+
+    <section>
+        <h2>Formulario de Contacto</h2>
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Lista de Productos</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Producto 1</td>
+                    <td>Este es el primer producto.</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>Producto 2</td>
+                    <td>Este es el segundo producto.</td>
+                    <td>$20.00</td>
+                </tr>
+                <tr>
+                    <td>Producto 3</td>
+                    <td>Este es el tercer producto.</td>
+                    <td>$30.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ejemplo de HTML. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
