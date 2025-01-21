@@ -1,4 +1,4 @@
-# Contenedores de vídeo
+# Códecs de vídeo
 
 Los archivos de video, como los formatos **AVI** o **MP4**, son en realidad contenedores que almacenan diferentes tipos de datos relacionados con video y audio. Un contenedor define **cómo se organiza** el contenido, no necesariamente qué datos se incluyen. Por ejemplo, un archivo de video puede tener varias pistas: una de video (sin audio) y una o más de audio (sin video), junto con metadatos para sincronización, idioma o relación de aspecto.
 
