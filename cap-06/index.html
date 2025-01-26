@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalización con HTML5</title>
+    <style>
+       
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Geolocalización en HTML5</h1>
+    <button onclick="getLocation()">Obtener mi Ubicación</button>
+    <div id="map"></div>
+
+   
+    <script src="https://maps.googleapis.com/maps/api/js?key=CLAVE_API"></script>
+    <script src="geolocalizacion.js"></script>
+</body>
+</html>
